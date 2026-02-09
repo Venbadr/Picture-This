@@ -1,23 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Picture This!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Picture This!</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body>
+    <header class="header">
+      <div class="title">
+        <h1>Picture This!</h1>
+        <h4>My Really Cool Blog Post</h4>
+      </div>
 
-<body>
-  <header class="header">
-    <div class="title">
-      <h1>Picture This!</h1>
-      <h4>My Really Cool Blog Post</h4>
-    </div>
-    <img src="images/museum.jpg" alt="placeholder">
+      <picture>
+        <!-- landscape image below 960px -->
+        <source
+          media="(max-width: 959px)"
+          srcset="images/museum-land1440.jpg 1440w"
+          sizes="(max-width: 320px) 320px,
+                 (max-width: 480px) 480px,
+                 (max-width: 720px) 720px,
+                 960px"
+        />
 
-  </header>
-</body>
+        <!-- square image above 960px  -->
+        <source
+          media="(min-width: 960px)"
+          srcset="images/museum-square1440.jpg 1440w"
+          sizes="(min-width: 960px) 480px,
+                 (min-width: 1280px) 640px,
+                 (min-width: 1600px) 800px"
+        />
 
+        <img src="images/museum-land1440.jpg" alt="museum picture" />
+      </picture>
+    </header>
+  </body>
 </html>
